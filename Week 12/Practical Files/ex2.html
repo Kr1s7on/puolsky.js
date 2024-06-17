@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - class discussion</title>
+</head>
+<body>
+    <!-- Info -->
+    <!-- 2. Write codes for a webpage that:
+        a. Prompt user for a numerical input.
+        b. If the input is not numerical, display an alert that reminds the user to enter a numerical input.
+        c. If the input is 0, display an alert that says, “You have entered a 0.”
+        d. Else if the input is positive, display an alert that says, “You have entered a positive number.”
+        e. Else if the input is negative, display an alert that says, “You have entered a negative number.”
+    
+    3. Modify the codes in Part B2 to use only switch statements
+        a. Prompt the user for a numerical input.
+        b. If the user enters 0, display an alert that shows a greeting message.
+        c. If the user enters 1, display an alert that shows the weather today.
+        d. If the user enters 2, display an alert that shows a farewell message.
+        e. Any other inputs will cause an alert that shows an error message. -->
+    <!-- Info -->
+
+    <script>
+        var i = 1; // Initialize variable i with value 1
+        var j = 2; // Initialize variable j with value 2
+        var k = 4; // Initialize variable k with value 4
+        var f = 1.0; // Initialize variable f with value 1.0
+
+        console.log("a) " + (i > j && k > f)); // Print the result of the logical expression (i > j && k > f)
+        console.log("b) " + (i != j && k != f)); // Print the result of the logical expression (i != j && k != f)
+        console.log("c) " + (i == 1 || j == 2 || k != 4)); // Print the result of the logical expression (i == 1 || j == 2 || k != 4)
+        console.log("d) " + (i <= j && j >= k)); // Print the result of the logical expression (i <= j && j >= k)
+    </script>
+
+    <script>
+        "use strict"; // Enable strict mode
+
+        // Prompt user for a numerical input
+        var userInput = prompt("Please enter a number");
+    
+        // Check if the input is a number
+        if (isNaN(userInput)) {
+            alert("Please enter a numerical input");
+        } 
+        
+        else {
+            userInput = Number(userInput);
+            
+            switch (userInput) {
+                case 0:
+                    alert("You have entered a 0.");
+                    break;
+
+                case 1:
+                    alert("The weather today is sunny.");
+                    break;
+
+                case 2:
+                    alert("Goodbye!");
+                    break;
+
+                default:
+                    alert("Error: Invalid input");
+            }
+        }
+    </script>
+</body>
+</html>

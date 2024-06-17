@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>Example:Event Handler</title>
+<script>
+var noOfActivity=0;
+function checkMaxActivity(theSport){
+	console.log(theSport.value);
+   	if (theSport.checked==true) {
+		if (noOfActivity==2) {
+			alert("Your choice of hobbies exceeds 2!");
+			theSport.checked=false;
+		}	
+		else
+			noOfActivity++;
+	}
+	else
+			noOfActivity--;
+}
+</script>
+</head>
+<body>
+<form>
+Your hobbies:
+<input type="checkbox" name="activity" value="read"  onclick="checkMaxActivity(this);" />Read&nbsp;&nbsp;
+<input type="checkbox" name="activity" value="write" onclick="checkMaxActivity(this);" />Write&nbsp;&nbsp;
+<input type="checkbox" name="activity" value="fight" onclick="checkMaxActivity(this);" />Fight&nbsp;&nbsp;
+<input type="checkbox" name="activity" value="sleep" onclick="checkMaxActivity(this);" />Sleep&nbsp;&nbsp;
+<input type="checkbox" name="activity" value="chat" onclick="checkMaxActivity(this);" />Chat&nbsp;&nbsp;
+</form>
+</body>
+</html>
