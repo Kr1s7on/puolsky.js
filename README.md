@@ -1,7 +1,7 @@
 # puolsky.js
 
 ```javascript
-console.log("These are my compiled notes, practicals, and labs.")
+console.log("These are my compiled code, practicals, and labs.")
 ```
 
 ```javascript
