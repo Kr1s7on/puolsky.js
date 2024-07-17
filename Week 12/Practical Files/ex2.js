@@ -1,14 +1,21 @@
 "use strict"; // Enable strict mode at the beginning of the script
 
-var i = 1; // Initialize variable i with value 1
-var j = 2; // Initialize variable j with value 2
-var k = 4; // Initialize variable k with value 4
-var f = 1.0; // Initialize variable f with value 1.0
+// var i = 1; // Initialize variable i with value 1
+// var j = 2; // Initialize variable j with value 2
+// var k = 4; // Initialize variable k with value 4
+// var f = 1.0; // Initialize variable f with value 1.0
 
-console.log("a) " + (i > j && k > f)); // result of (i > j && k > f)
-console.log("b) " + (i != j && k != f)); // result of (i != j && k != f)
-console.log("c) " + (i == 1 || j == 2 || k != 4)); // result of (i == 1 || j == 2 || k != 4)
-console.log("d) " + (i <= j && j >= k)); // result of (i <= j && j >= k)
+// // False
+// console.log("a) " + (i > j && k > f)); // result of (i > j && k > f)
+
+// // True
+// console.log("b) " + (i != j && k != f)); // result of (i != j && k != f)
+
+// // True
+// console.log("c) " + (i == 1 || j == 2 || k != 4)); // result of (i == 1 || j == 2 || k != 4)
+
+// // False
+// console.log("d) " + (i <= j && j >= k)); // result of (i <= j && j >= k)
 
 // Prompt user for a numerical input
 var userInput = prompt("Please enter a number");
