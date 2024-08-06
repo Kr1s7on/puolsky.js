@@ -23,7 +23,9 @@ var userInput = prompt("Please enter a number");
 // Check if the input is a number
 if (isNaN(userInput)) { // If the input is not a number, NaN (Not a Number)
     alert("Please enter a numerical input");
-} else {
+}
+
+else {
     userInput = Number(userInput);
 
     switch (userInput) {

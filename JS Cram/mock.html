@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Interactive Greeting</title>
+    <script>
+        function greetUser() {
+            // Get user's name and favorite color
+            let userName = prompt("Please enter your name:");
+            let favoriteColor = prompt("Please enter your favorite color:");
+
+            // Get the current day of the week
+            let today = new Date();
+            let dayOfWeek = today.getDay();
+            let dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            let dayName = dayNames[dayOfWeek];
+
+            // Create greeting message with dynamic color
+            let greeting = `Hello ${userName}! Today is ${dayName}.`;
+
+            // Update the content of the webpage
+            let outputDiv = document.getElementById("output");
+            outputDiv.textContent = greeting;
+            outputDiv.style.color = favoriteColor;
+        }
+    </script>
+
+    <script>
+        function greet_user() {
+            let personName = prompt("Enter your name: ");
+            let favColor = prompt("Enter your favorite color: ");
+
+            let today = new Date();
+            let dayOfWeek = today.getDay();
+            let dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            let dayName = dayNames[dayOfWeek];
+
+            let greeting = `Hello ${personName}! Today is ${dayName}.`;
+
+            let outputDiv = document.getElementById("output");
+            outputDiv.textContent = greeting;
+            outputDiv.style.color = favColor;
+        }
+    </script>
+</head>
+
+<body onload="greetUser()">
+    <div id="output"></div>
+</body>
+
+</html>

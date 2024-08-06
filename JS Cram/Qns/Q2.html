@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Q2</title>
+    <style>
+        * {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #table {
+            visibility: hidden;
+        }
+
+        table,
+        th,
+        tr,
+        td {
+            border: 3px double black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Travel Checklist</h1>
+
+    <div id="contents">
+        <label for="item">Enter item</label>
+        <input type="text" id="item">
+
+        <br><br>
+
+        <label for="cat">Category</label>
+        <select name="cat" id="cat">
+            <option value="empty"></option>
+            <option value="Personal Item">Personal Items</option>
+            <option value="Electronics">Electronic Devices</option>
+            <option value="Documents">Travel Documents</option>
+        </select>
+
+        <input type="button" value="Add to List" onclick="addlist()">
+
+        <p>There are <span id="num">0</span> items in the list.</p>
+
+        <input type="button" value="Display List" onclick="display()">
+
+        <br><br>
+    </div>
+
+    <table id="table">
+        <thead>
+            <tr>
+                <th>Items</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be added here dynamically -->
+        </tbody>
+    </table>
+
+    <script>
+        let num = 0;
+
+        function addlist() {
+            const item = document.getElementById("item").value;
+            const category = document.getElementById("cat").value;
+
+            if (item && category !== "empty") {
+                const table = document.getElementById("table").getElementsByTagName('tbody')[0];
+                const row = table.insertRow();
+                const cell1 = row.insertCell(0);
+                const cell2 = row.insertCell(1);
+                cell1.innerHTML = item;
+                cell2.innerHTML = category;
+
+                num++;
+                document.getElementById("num").textContent = num;
+            } 
+            
+            else {
+                alert("Please enter an item and select a category.");
+            }
+        }
+
+        function display() {
+            document.getElementById("table").style.visibility = 'visible';
+            document.getElementById("contents").style.visibility = 'hidden';
+        }
+    </script>
+</body>
+
+</html>

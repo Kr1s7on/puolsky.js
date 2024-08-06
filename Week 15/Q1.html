@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- main has 9 child nodes -->
+    <main>
+        <h1>Apples</h1>
+        <p>The apple is the pomaceous fruit of the apple tree.</p>
+
+        <article>
+            <h2>Red Delicious</h2>
+            <p>These bright red apples are the most common found in many supermarkets.</p>
+            <div id="reference">
+                <!-- h3 node has 2 sibling nodes -->
+                <h3>Examples</h3>
+                <ul>
+                    <li>Gala</li>
+                    <li>Fuji</li>
+                </ul>
+            </div>
+        </article>
+
+        <article>
+            <h2>Granny Smith</h2>
+            <p>These juicy, green apples make a great filling for apple pies.</p>
+            <!-- parent node of a is p its in -->
+            <p>More info found at <a href="https://www.orangepippin.com/apples/granny-smith">here</a></p>
+        </article>
+
+    </main>
+
+    <script>
+        // d) Write the statement which use document.getElementById() to get the div of id equal to reference.
+        document.getElementById("reference");
+
+        // e) Write the statement which use document.querySelector()  to get the unordered list under the div of id equal to reference.
+        document.querySelector("#reference ul");
+
+        // f) Write the statement which use document.querySelectorAll() to get all the articles under the node main.
+        document.querySelectorAll("main article");
+
+        // g)  Write the statements to change the designated url of the a link to https://en.wikipedia.org/wiki/Granny_Smith and change Orange Pippin to Wikipedia.
+        document.querySelector("main article a").href = "https://en.wikipedia.org/wiki/Granny_Smith";
+        document.querySelector("main article a").textContent = "Wikipedia";
+
+        // h)  Write the statements to add the following html content to the main node.<footer><p>&copy;RGApple of Singapore</p></footer>
+        let footer = document.createElement("footer");
+        let p = document.createElement("p");
+        p.textContent = "&copy;RGApple of Singapore";
+        footer.appendChild(p);
+        document.querySelector("main").appendChild(footer);
+
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont;
+        }
+
+        .delete-btn {
+            margin-left: 15px;
+            color: white;
+            cursor: pointer;
+            padding: 5px 10px;
+            background-color: black;
+            border-radius: 5px;
+            transition: 0.5s;
+        }
+
+        .delete-btn:hover {
+            color: black;
+            background-color: white;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Shopping List</h1>
+    <form id="addItemForm">
+        <input type="text" id="newItem" placeholder="Enter item">
+        <br><br>
+        <button type="submit">Add Item</button>
+    </form>
+    <br><br>
+    <h1>Shopping List</h1>
+    <ul id="shoppingList"></ul>
+
+    <script>
+        var form = document.getElementById("addItemForm");
+        var input = document.getElementById("newItem");
+        var list = document.getElementById("shoppingList");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            if (input.value !== "") {
+                addItem(input.value);
+                input.value = "";
+            }
+        });
+
+        function addItem(item) {
+            var li = document.createElement("span");
+            li.textContent = item;
+
+            var deleteBtn = document.createElement("span");
+            deleteBtn.textContent = "X";
+            deleteBtn.className = "delete-btn";
+            deleteBtn.onclick = function() {
+                list.removeChild(li);
+            };
+
+            li.appendChild(deleteBtn);
+            list.appendChild(li);
+        }
+    </script>
+</body>
+
+</html>

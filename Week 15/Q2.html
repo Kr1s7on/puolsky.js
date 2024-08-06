@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        #ball {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+    </style>
+    <script>
+        // After the web page has loaded, in every 2 sec, 
+        // the ball will be alternatively in blue or green. Clear the timer after 10 sec.
+        function changeColor() {
+            var ball = document.getElementById("ball");
+            
+            if (ball.style.backgroundColor == "blue") {
+                ball.style.backgroundColor = "red";
+            } 
+            
+            else {
+                ball.style.backgroundColor = "blue";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="ball" style="background-color: blue"></div>
+    <script>
+        var timer;
+        // set the timer here to ensure page is loaded
+        timer = setTimeout(changeColor, 3000);
+    </script>
+</body>
+
+</html>
